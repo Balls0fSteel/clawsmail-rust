@@ -1,0 +1,8 @@
+/target
+spikes/*/target
+*.pdb
+# Local OAuth client IDs and secrets for development builds
+.env
+.env.*
+# Test artefacts
+/scratch
