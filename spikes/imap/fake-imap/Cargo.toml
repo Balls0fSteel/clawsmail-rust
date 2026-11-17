@@ -1,0 +1,9 @@
+[package]
+name = "fake-imap"
+version = "0.0.0"
+edition = "2024"
+license = "GPL-3.0-or-later"
+publish = false
+
+[dependencies]
+tokio = { version = "1", features = ["rt", "net", "io-util", "time", "sync", "macros"] }

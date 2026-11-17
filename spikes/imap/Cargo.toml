@@ -1,0 +1,31 @@
+[package]
+name = "imap-spike"
+version = "0.0.0"
+edition = "2024"
+license = "GPL-3.0-or-later"
+publish = false
+rust-version = "1.100"
+
+# Standalone throwaway workspace; the root workspace excludes `spikes`.
+# `fake-imap` is a path dependency inside this directory, so it is a member automatically.
+[workspace]
+
+[dependencies]
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "io-util", "time", "sync"] }
+base64 = "0.22"
+# Candidate A
+async-imap = { version = "0.12", default-features = false, features = ["runtime-tokio"] }
+# Candidate B
+imap-client = "0.3.1"
+imap-next = "0.3.4"
+# Pinned to what imap-next 0.3.4 resolves to; used directly only to show parser behaviour.
+imap-codec = "=2.0.0-alpha.10"
+# Candidate C (probe): imap-client's successor. Pinned exactly: it breaks its API weekly.
+io-imap = { version = "=0.11.2", default-features = false, features = ["client"] }
+# TLS
+tokio-rustls = { version = "0.26", default-features = false, features = ["ring", "tls12", "logging"] }
+rustls-platform-verifier = "0.7"
+
+[dev-dependencies]
+futures = "0.3"
+fake-imap = { path = "fake-imap" }
