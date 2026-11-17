@@ -1,0 +1,36 @@
+[package]
+name = "webview-spike"
+version = "0.0.0"
+edition = "2024"
+rust-version = "1.100"
+license = "GPL-3.0-or-later"
+publish = false
+description = "Spike B: Win32 shell (TreeView, virtual ListView) with a locked-down WebView2 mail view"
+
+# Standalone workspace: the root workspace excludes `spikes`.
+[workspace]
+
+[dependencies]
+# webview2-com 0.39 is built against windows 0.62; the versions must match so the COM types unify.
+webview2-com = "0.39.1"
+
+[dependencies.windows]
+version = "0.62.2"
+features = [
+    "Win32_Foundation",
+    "Win32_Graphics_Gdi",
+    "Win32_Storage_FileSystem",
+    "Win32_System_Com",
+    "Win32_System_LibraryLoader",
+    "Win32_UI_Controls",
+    "Win32_UI_HiDpi",
+    "Win32_UI_Shell",
+    "Win32_UI_WindowsAndMessaging",
+]
+
+# Same as the root workspace's release profile, so the size figure is representative.
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = "symbols"
+panic = "abort"

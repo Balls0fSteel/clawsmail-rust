@@ -1,0 +1,43 @@
+  0.002s [dpi] thread awareness context is Per-Monitor-V2: true (from the manifest)
+  0.003s [comctl] C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.9818_none_3e071914e3359bdd\comctl32.dll (v6 visual styles: true)
+  0.003s [webview] default folder next to exe present at start: false
+  0.015s [list] LVM_SETITEMCOUNT(100000) took 0.239 ms
+  0.034s [dpi] GetDpiForWindow = 96 (scale 100%)
+  0.034s [webview] user data folder: C:\Users\x\AppData\Local\Temp\clawsmail-rust-spike\webview2
+  0.038s [webview] runtime version: 157.0.4341.46
+  0.200s [settings] IsScriptEnabled=true AreDefaultContextMenusEnabled=false AreDevToolsEnabled=false
+  0.200s [webview] request filter: '*' all contexts, all source kinds (ICoreWebView2_22)
+  0.200s [csp] default-src 'none'; script-src 'unsafe-inline'; img-src https://cid.invalid; style-src 'unsafe-inline'; font-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'
+  0.203s [nav] allowed own content (id 2): data:text/html;charset=utf-8;base64,PCFkb2N0eXBlIGh0bWw+Cjxo...
+  0.247s [console] Log.enable -> Ok("ok")
+  0.251s [console] {"entry":{"level":"error","lineNumber":35,"source":"security","text":"Loading the image 'https://example.com/track.png' violates the following Content Security Policy directive: \"img-src https://cid.invalid\". The action has been blocked.","timestamp":1.794946780988628e+12,"url":"about:blank"}}
+  0.251s [console] {"entry":{"level":"error","source":"security","text":"Loading the image 'https://example.com/script-beacon.gif' violates the following Content Security Policy directive: \"img-src https://cid.invalid\". The action has been blocked.","timestamp":1.794946780989294e+12,"url":"about:blank"}}
+  0.251s [console] {"entry":{"level":"error","source":"security","text":"Loading the image 'https://example.com/bg.png' violates the following Content Security Policy directive: \"img-src https://cid.invalid\". The action has been blocked.","timestamp":1.794946780989536e+12,"url":"about:blank"}}
+  0.252s [cid] served https://cid.invalid/logo@clawsmail (image/png, 2409 bytes) from the message's own parts
+  0.266s [nav] content loaded (id 2, success=true); DocumentTitle read natively = "SCRIPT RAN"
+  0.269s [probe:loaded] title=SCRIPT RAN | probe=SCRIPT RAN: scripts are ON | bodyBg=rgb(255, 179, 179) | cid-img=192x48 | tracker=0x0 | location=about:blank
+  0.269s [probe:loaded] verdict: page script ran = true; cid image rendered = true; tracker loaded = false
+  0.356s [list] jump+repaint: to row 99999 3.57 ms, to row 50000 3.15 ms, to row 0 3.18 ms; 224 LVN_GETDISPINFO calls for the three repaints
+  1.766s [menu] child windows: ["SysTreeView32", "SysListView32", "SysHeader32", "Chrome_WidgetWin_0", "Chrome_WidgetWin_1", "Chrome_RenderWidgetHostHWND", "Intermediate D3D Window"]
+  1.767s [menu] posted a right click at (120,60) to Chrome_RenderWidgetHostHWND
+  2.287s [nav] CANCELLED (id 3, user_initiated=true): https://example.com/meta-refresh-away -> would open in the system browser
+  2.290s [blocked] https://example.com/meta-refresh-away
+  2.292s [nav] completed (id 3) success=false status=14
+  3.263s [nav] host script clicks #away and #blank
+  3.264s [nav] BLOCKED new window: https://example.com/popup -> would open in the system browser
+  3.269s [nav] CANCELLED (id 4, user_initiated=true): https://example.com/phish -> would open in the system browser
+  3.270s [blocked] https://example.com/phish
+  3.271s [nav] completed (id 4) success=false status=14
+  4.263s [probe:after-navigation-attempts] title=SCRIPT RAN | probe=SCRIPT RAN: scripts are ON | bodyBg=rgb(255, 179, 179) | cid-img=192x48 | tracker=0x0 | location=about:blank
+  4.263s [probe:after-navigation-attempts] verdict: page script ran = true; cid image rendered = true; tracker loaded = false
+  6.044s [exit] --exit-after reached
+  6.062s ==== summary ====
+  6.062s blocked requests (2): ["https://example.com/meta-refresh-away", "https://example.com/phish"]
+  6.062s cid parts served (1): ["https://cid.invalid/logo@clawsmail"]
+  6.062s navigations cancelled (2): ["https://example.com/meta-refresh-away", "https://example.com/phish"]
+  6.062s new windows blocked (1): ["https://example.com/popup"]
+  6.062s CSP console reports: 3
+  6.062s ContextMenuRequested events: 0
+  6.062s LVN_GETDISPINFO calls in total: 299
+  6.062s default '<exe>.WebView2' folder next to exe present at exit: false
+  6.062s user data folder exists in temp: true

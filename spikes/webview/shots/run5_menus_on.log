@@ -1,0 +1,43 @@
+  0.002s [dpi] thread awareness context is Per-Monitor-V2: true (from the manifest)
+  0.002s [comctl] C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.9818_none_3e071914e3359bdd\comctl32.dll (v6 visual styles: true)
+  0.002s [webview] default folder next to exe present at start: false
+  0.024s [list] LVM_SETITEMCOUNT(100000) took 0.418 ms
+  0.045s [dpi] GetDpiForWindow = 96 (scale 100%)
+  0.045s [webview] user data folder: C:\Users\x\AppData\Local\Temp\clawsmail-rust-spike\webview2
+  0.050s [webview] runtime version: 157.0.4341.46
+  0.225s [settings] IsScriptEnabled=false AreDefaultContextMenusEnabled=true AreDevToolsEnabled=false
+  0.225s [webview] request filter: '*' all contexts, all source kinds (ICoreWebView2_22)
+  0.225s [csp] default-src 'none'; img-src https://cid.invalid; style-src 'unsafe-inline'; font-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'
+  0.228s [nav] allowed own content (id 2): data:text/html;charset=utf-8;base64,PCFkb2N0eXBlIGh0bWw+Cjxo...
+  0.275s [console] Log.enable -> Ok("ok")
+  0.279s [console] {"entry":{"level":"error","lineNumber":35,"source":"security","text":"Loading the image 'https://example.com/track.png' violates the following Content Security Policy directive: \"img-src https://cid.invalid\". The action has been blocked.","timestamp":1.794946791210512e+12,"url":"about:blank"}}
+  0.280s [console] {"entry":{"level":"error","source":"security","text":"Loading the image 'https://example.com/bg.png' violates the following Content Security Policy directive: \"img-src https://cid.invalid\". The action has been blocked.","timestamp":1.794946791211022e+12,"url":"about:blank"}}
+  0.280s [cid] served https://cid.invalid/logo@clawsmail (image/png, 2409 bytes) from the message's own parts
+  0.303s [nav] content loaded (id 2, success=true); DocumentTitle read natively = "Claws Mail Rust newsletter"
+  0.306s [probe:loaded] title=Claws Mail Rust newsletter | probe=Scripts are OFF: an inline \u003Cscript> in this mail would have replaced this line. | bodyBg=rgb(255, 255, 255) | cid-img=192x48 | tracker=0x0 | location=about:blank
+  0.306s [probe:loaded] verdict: page script ran = false; cid image rendered = true; tracker loaded = false
+  0.370s [list] jump+repaint: to row 99999 4.20 ms, to row 50000 4.45 ms, to row 0 4.41 ms; 224 LVN_GETDISPINFO calls for the three repaints
+  1.797s [menu] child windows: ["SysTreeView32", "SysListView32", "SysHeader32", "Chrome_WidgetWin_0", "Chrome_WidgetWin_1", "Chrome_RenderWidgetHostHWND", "Intermediate D3D Window"]
+  1.797s [menu] posted a right click at (120,60) to Chrome_RenderWidgetHostHWND
+  1.801s [menu] ContextMenuRequested fired (the right click reached the page)
+  2.324s [nav] CANCELLED (id 3, user_initiated=true): https://example.com/meta-refresh-away -> would open in the system browser
+  2.327s [blocked] https://example.com/meta-refresh-away
+  2.328s [nav] completed (id 3) success=false status=14
+  3.299s [nav] host script clicks #away and #blank
+  3.300s [nav] BLOCKED new window: https://example.com/popup -> would open in the system browser
+  3.306s [nav] CANCELLED (id 4, user_initiated=true): https://example.com/phish -> would open in the system browser
+  3.307s [blocked] https://example.com/phish
+  3.308s [nav] completed (id 4) success=false status=14
+  4.301s [probe:after-navigation-attempts] title=Claws Mail Rust newsletter | probe=Scripts are OFF: an inline \u003Cscript> in this mail would have replaced this line. | bodyBg=rgb(255, 255, 255) | cid-img=192x48 | tracker=0x0 | location=about:blank
+  4.301s [probe:after-navigation-attempts] verdict: page script ran = false; cid image rendered = true; tracker loaded = false
+  5.054s [exit] --exit-after reached
+  5.080s ==== summary ====
+  5.080s blocked requests (2): ["https://example.com/meta-refresh-away", "https://example.com/phish"]
+  5.080s cid parts served (1): ["https://cid.invalid/logo@clawsmail"]
+  5.080s navigations cancelled (2): ["https://example.com/meta-refresh-away", "https://example.com/phish"]
+  5.080s new windows blocked (1): ["https://example.com/popup"]
+  5.080s CSP console reports: 2
+  5.080s ContextMenuRequested events: 1
+  5.080s LVN_GETDISPINFO calls in total: 299
+  5.080s default '<exe>.WebView2' folder next to exe present at exit: false
+  5.080s user data folder exists in temp: true
